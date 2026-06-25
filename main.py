@@ -76,6 +76,14 @@ def listar_tarefas():
 # =====================================================================
 
 def concluir_tarefa(indice):
+    if indice < 1 or indice > len(tarefas):
+        print("numero de tarefa invalido")
+        return
+    else:
+        for index, itens in enumerate(tarefas, start=1):
+            if index == indice:
+                itens['concluida'] = True
+                print(f"tarefa {itens['titulo']} concluida")
     """
     Marca como concluída a tarefa na posição `indice` (começando em 1).
 
@@ -97,36 +105,15 @@ def concluir_tarefa(indice):
 
 
 def remover_tarefa(indice):
-    """
-    Remove da lista a tarefa na posição `indice` (começando em 1).
+    if indice < 1 or indice > len(tarefas):
+        print("numero de tarefa invalido")
+        
+    else:
+        for index, itens in enumerate(tarefas, start=1):
+            tarefas.pop(indice - 1)
+            print("tarefa removida")
 
-    Regras:
-        - Mesma validação de índice de concluir_tarefa().
-        - Use o método tarefas.pop(indice - 1) para remover e guardar
-          a tarefa removida ao mesmo tempo.
-        - Exiba uma mensagem confirmando qual tarefa foi removida.
-    """
-    # TODO (Aula 2): valide o índice recebido
-    # TODO (Aula 2): remova a tarefa da lista usando pop()
-    # TODO (Aula 2): exiba uma mensagem de confirmação
-    # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
-    pass
-
-
-def editar_tarefa(indice, novo_titulo):
-    """
-    [DESAFIO] Atualiza o título de uma tarefa existente.
-
-    Regras:
-        - Mesma validação de índice das funções anteriores.
-        - Atualize apenas a chave "titulo" da tarefa, sem alterar as
-          outras informações (concluida, prioridade).
-        - Exiba uma mensagem confirmando a atualização.
-    """
-    # TODO (Aula 2): valide o índice recebido
-    # TODO (Aula 2): atualize o título da tarefa
-    # TODO (Aula 2): exiba uma mensagem de confirmação
-    # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
+     # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
     pass
 
 
