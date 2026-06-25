@@ -32,6 +32,7 @@ tarefas = []
 # =====================================================================
 
 def adicionar_tarefa(titulo, prioridade="media"):
+    tarefas.append({'titulo':titulo, 'concluida':False, 'prioridade':prioridade})
     """
     Cria uma nova tarefa e adiciona à lista `tarefas`.
 
@@ -51,7 +52,7 @@ def adicionar_tarefa(titulo, prioridade="media"):
 
 
 def listar_tarefas():
-    """
+    for index, intens in enumerate(tarefas, start=1):  """
     Exibe todas as tarefas cadastradas na lista `tarefas`.
 
     Regras:
